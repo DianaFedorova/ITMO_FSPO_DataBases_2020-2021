@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>queries - Zoo</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Zoo</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tables/animals/" class="dropdown-item">animals</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/building/" class="dropdown-item">building</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/feeding_ration/" class="dropdown-item">feeding_ration</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/habitat_area/" class="dropdown-item">habitat_area</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/habitation/" class="dropdown-item">habitation</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/nutrition/" class="dropdown-item">nutrition</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/service/" class="dropdown-item">service</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/type/" class="dropdown-item">type</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/worker/" class="dropdown-item">worker</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/zoo_territory/" class="dropdown-item">zoo_territory</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Queries <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">queries</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Code <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../code/create/" class="dropdown-item">create</a>
+</li>
+                                    
+<li>
+    <a href="../../code/insert/" class="dropdown-item">insert</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../tables/zoo_territory/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../code/create/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">Запросы</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">Запросы</h1>
+<h3 id="no-11">№ 1.1</h3>
+<h4 id="_2">Вывести информацию о всех обслуживаниях, сортированную по именам животных.</h4>
+<pre><code>SELECT service.id_service, animals.name,worker.fio from service, animals,worker where (service.id_worker = worker.id_worker) and (service.id_animal=animals.id_animal) ORDER by animals.name;
+</code></pre>
+<p><img alt="" src="../1.1.png" /></p>
+<h3 id="no-12">№ 1.2</h3>
+<h4 id="_3">Вывести информацию о типе и времени питания каждого животного, сортированную по названию рациона питания.</h4>
+<pre><code>SELECT animals.id_animal, feeding_ration.type,feeding_ration.description,nutrition.feeding_time from (animals join  nutrition on nutrition.id_animal = animals.id_animal) join feeding_ration on feeding_ration.id_feeding_ration=nutrition.id_feeding_ration  ORDER by feeding_ration.type; 
+</code></pre>
+<p><img alt="" src="../1.2.png" /></p>
+<h3 id="no-21">№ 2.1</h3>
+<h4 id="concentrate-2">Вывести информацию о рационах питания под названием "concentrate", у котрых номер рациона больше 2.</h4>
+<pre><code>SELECT *from feeding_ration where(type = 'concentrate') and (id_feeding_ration&gt;2);
+</code></pre>
+<p><img alt="" src="../2.1.png" /></p>
+<h3 id="no-22">№ 2.2</h3>
+<h4 id="zootechnik-veterinarian-79679834988-78955984323">Вывести информацию о сотрудниках, которые занимают должность "zootechnik" или "veterinarian" или у которых номер телефона "+79679834988" или "+78955984323".</h4>
+<pre><code>SELECT id_worker, fio, post,phone_number from worker where ((post = 'zootechnik')or (post ='veterinarian')) or ((phone_number='+79679834988') or (phone_number = '+78955984323'));
+</code></pre>
+<p><img alt="" src="../2.2.png" /></p>
+<h3 id="no-31">№ 3.1</h3>
+<h4 id="1979">Вывести информацию о сотрудниках, которые родились позже 1979 года.</h4>
+<pre><code>SELECT * from worker where(EXTRACT(year FROM birthday))&gt;1979;
+</code></pre>
+<p><img alt="" src="../3.1.png" /></p>
+<h3 id="no-32">№ 3.2</h3>
+<h4 id="13">Вывести день, месяц и год рождения животных, которые родились в июне или до 13 числа любого месяца.</h4>
+<pre><code>SELECT id_animal,name, EXTRACT(day from birthday) as day_birthday, EXTRACT(MONTH from birthday) as month_birthday,EXTRACT(YEAR from birthday) as year_birthday from animals where EXTRACT(MONTH from birthday)=6 or EXTRACT(day from birthday) &lt; 13; 
+</code></pre>
+<p><img alt="" src="../3.2.png" /></p>
+<h3 id="no-41">№ 4.1</h3>
+<h4 id="_4">Вывести всех сотрудников с использованием функции смены регистра.</h4>
+<pre><code>SELECT id_worker, UPPER(fio),post, phone_number FROM worker; 
+</code></pre>
+<p><img alt="" src="../4.1.png" /></p>
+<h3 id="no-42">№ 4.2</h3>
+<h4 id="_">Вывести всех сотрудников, заменив  все пробелы в ФИО на "_".</h4>
+<pre><code>SELECT id_worker, REPLACE(fio,' ','_'),post, phone_number FROM worker where fio = UPPER(fio) or fio =INITCAP(fio);
+</code></pre>
+<p><img alt="" src="../4.2.png" /></p>
+<h3 id="no-51">№ 5.1</h3>
+<h4 id="3-1000-900-1700">Вывести информацию о сотрудниках, которые обслуживают животных, у которых уникальный номер больше 3, и дни обслуживнаия "Понедельник в 10:00" или "Каждый день в 9:00 и 17:00".</h4>
+<pre><code>SELECT id_worker,fio,post from worker where id_worker in (SELECT id_worker from service where (id_animal &gt; 3) and (service = 'Monday at 10:00' Or service = 'feeding every day at 9:00 and 17:00'));
+</code></pre>
+<p><img alt="" src="../5.1.png" /></p>
+<h3 id="no-52">№ 5.2</h3>
+<h4 id="voluminous">Вывести уникальные номера и имена животных, у которых типом рациона питания не является тип 'voluminous'.</h4>
+<pre><code>SELECT id_animal, name FROM animals WHERE id_animal in (SELECT id_animal FROM nutrition where id_feeding_ration not in (SELECT id_feeding_ration from feeding_ration where type = 'voluminous'));
+</code></pre>
+<p><img alt="" src="../5.2.png" /></p>
+<h3 id="no-61">№ 6.1</h3>
+<h4 id="103400-123500">Вывести количество животных, у которых время питания между 10:34:00 и 12:35:00.</h4>
+<pre><code>SELECT COUNT(id_animal) as kol_animals from  nutrition where feeding_time BETWEEN '10:34:00' and '12:35:00';
+</code></pre>
+<p><img alt="" src="../6.1.png" /></p>
+<h3 id="no-62">№ 6.2</h3>
+<h4 id="id-2">Вывести год рождения самого страшего сотрудника среди сотрудников, у которых id больше 2.</h4>
+<pre><code>SELECT min(EXTRACT(year FROM birthday)) as YEAR from worker where id_worker&gt;2;
+</code></pre>
+<p><img alt="" src="../6.2.png" /></p>
+<h3 id="no-63">№ 6.3</h3>
+<h4 id="1979-1100-2000">Вывести количество сотрудников, которые родились позже 1979, и которые обслуживают животных каждый день в 11:00 и 20:00.</h4>
+<pre><code>SELECT  COUNT(worker.id_worker) as kol_worker from  worker where (EXTRACT(year FROM birthday))&gt;1979 or id_worker in (SELECT id_worker from service where service = 'feeding every day at 11:00 and 20:00');
+</code></pre>
+<p><img alt="" src="../6.3.png" /></p>
+<h3 id="no-7">№ 7</h3>
+<h4 id="2">Вывести количество зон обитания, на территории которых обитает более 2 животных зоопарка.</h4>
+<pre><code>SELECT habitation.id_habitat_area from  habitation  GROUP BY id_habitat_area HAVING COUNT(id_animal)&gt;2;
+</code></pre>
+<p><img alt="" src="../7.png" /></p>
+<h3 id="no-81">№ 8.1</h3>
+<h4 id="id">Вывести основную информацию (id,ФИО,должность) только о тех сотрудниках, которые обслуживают животных.</h4>
+<pre><code>SELECT id_worker, fio, post from worker where EXISTS(Select * from service where worker.id_worker = service.id_worker);
+</code></pre>
+<p><img alt="" src="../8.1.png" /></p>
+<h3 id="no-82">№ 8.2</h3>
+<h4 id="_5">Вывести уникальные номера и имена животных, которые являются игуанами.</h4>
+<pre><code>SELECT id_animal, name from animals where id_animal = any (SELECT id_animal from type where name = 'iguana');
+</code></pre>
+<p><img alt="" src="../8.2.png" /></p>
+<h3 id="no-91">№ 9.1</h3>
+<h4 id="15082015-16022025-hawk_jim">Вывести информацию о проживании животных на территории зоопарка, где период проживания с 15.08.2015 по 16.02.2025, в число которых не входит hawk_Jim.</h4>
+<pre><code>SELECT *from zoo_territory where habitat_period = '15.08.2015-16.02.2025' INTERSECT SELECT *from zoo_territory where id_animal  not in (SELECT id_animal from animals where name ='hawk_Jim');
+</code></pre>
+<p><img alt="" src="../9.1.png" /></p>
+<h3 id="no-92">№ 9.2</h3>
+<h4 id="_6">Вывести информацию о сотрудниках, которые не обслуживают животных.</h4>
+<pre><code>SELECT * from worker EXCEPT SELECT *from worker where worker.id_worker in (SELECT id_worker from service);
+</code></pre>
+<p><img alt="" src="../9.2.png" /></p>
+<h3 id="no-101">№ 10.1</h3>
+<h4 id="_7">Вывести подробную информацию о всех животных и их типе.</h4>
+<pre><code>SELECT animals.id_animal,animals.name,animals.birthday,type.name as type,type.information_about_wintering,type.normal_temperature from animals inner join type on animals.id_animal=type.id_animal ORDER by id_animal;
+</code></pre>
+<p><img alt="" src="../10.1.png" /></p>
+<h3 id="no-102">№ 10.2</h3>
+<h4 id="_8">Вывести информацию о питании в зоопарке, которая содержит время питания, имя животного, тип питания и его описание.</h4>
+<pre><code>SELECT nutrition.id_nutrition,nutrition.feeding_time, animals.name, feeding_ration.type, feeding_ration.description from (nutrition LEFT JOIN animals on nutrition.id_animal=animals.id_animal) LEFT JOIN feeding_ration on nutrition.id_feeding_ration = feeding_ration.id_feeding_ration;
+</code></pre>
+<p><img alt="" src="../10.2.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

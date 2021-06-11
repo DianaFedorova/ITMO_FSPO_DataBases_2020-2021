@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>insert - Zoo</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Zoo</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tables/animals/" class="dropdown-item">animals</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/building/" class="dropdown-item">building</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/feeding_ration/" class="dropdown-item">feeding_ration</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/habitat_area/" class="dropdown-item">habitat_area</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/habitation/" class="dropdown-item">habitation</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/nutrition/" class="dropdown-item">nutrition</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/service/" class="dropdown-item">service</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/type/" class="dropdown-item">type</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/worker/" class="dropdown-item">worker</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/zoo_territory/" class="dropdown-item">zoo_territory</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Queries <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../queries/queries/" class="dropdown-item">queries</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Code <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../code/create/" class="dropdown-item">create</a>
+</li>
+                                    
+<li>
+    <a href="../../code/insert/" class="dropdown-item">insert</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MongoDB <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../create/" class="dropdown-item">create</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">insert</a>
+</li>
+                                    
+<li>
+    <a href="../queries/" class="dropdown-item">queries</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../create/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../queries/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#insert" class="nav-link">Insert</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="insert">Insert</h2>
+<h4 id="_1">Заполнение коллекции "Животные":</h4>
+<pre><code>db.Animals.insertMany([
+    {name:&quot;Jim&quot;,birthday: new Date(&quot;2005-04-25&quot;)},
+    {name:&quot;Tom&quot;,birthday: new Date(&quot;2005-05-02&quot;)},
+    {name:&quot;Sue&quot;,birthday: new Date(&quot;2005-05-30&quot;)},
+    {name:&quot;Josh&quot;,birthday:new Date(&quot;2005-06-03&quot;)},
+    {name:&quot;Joe&quot;,birthday:new Date(&quot;2005-05-12&quot;)}
+    ])
+</code></pre>
+<h4 id="_2">Вывод при заполении коллекции "Животные":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c0c3eed8e7c49af3eb60ec&quot;),
+        ObjectId(&quot;60c0c3eed8e7c49af3eb60ed&quot;),
+        ObjectId(&quot;60c0c3eed8e7c49af3eb60ee&quot;),
+        ObjectId(&quot;60c0c3eed8e7c49af3eb60ef&quot;),
+        ObjectId(&quot;60c0c3eed8e7c49af3eb60f0&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_3">Заполнение коллекции "Рацион кормления":</h4>
+<pre><code>db.feeding_ration.insertMany([
+    {type_ration:&quot;concentrate&quot;,description_ration:&quot;feed accounts for 90%, and concentrates - up to 10% in the structure of the diet&quot;},
+    {type_ration:&quot;voluminous&quot;,description_ration:&quot;concentrates are less than 60% in terms of nutritional value&quot;},
+    {type_ration:&quot;moderately-concentrated&quot;,description_ration:&quot;concentrates contain 60-70% nutritional value&quot;},
+    {type_ration:&quot;concentrate&quot;,description_ration:&quot;concentrates contain more than 75% nutritional value&quot;},
+    {type_ration:&quot;voluminous&quot;,description_ration:&quot;90-70% voluminous and 10-30% concentrates&quot;},
+    {type_ration:&quot;concentrate&quot;,description_ration:&quot;concentrates more than 40% the rest - bulky&quot;}
+    ])
+</code></pre>
+<h4 id="_4">Вывод при заполении коллекции "Рацион кормления":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c0c812d8e7c49af3eb60f1&quot;),
+        ObjectId(&quot;60c0c812d8e7c49af3eb60f2&quot;),
+        ObjectId(&quot;60c0c812d8e7c49af3eb60f3&quot;),
+        ObjectId(&quot;60c0c812d8e7c49af3eb60f4&quot;),
+        ObjectId(&quot;60c0c812d8e7c49af3eb60f5&quot;),
+        ObjectId(&quot;60c0c812d8e7c49af3eb60f6&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_5">Заполнение коллекции "Зона обитания":</h4>
+<pre><code>db.habitat_area.insertMany([
+    {name:&quot;Water environment&quot;,habitat:&quot;seas, lakes, oceans, lagoons, swamps&quot;,characteristics:&quot;Aquatic habitats are home to a wide variety of wildlife species. Almost any group of animals can be found here, from amphibians, reptiles, invertebrates to mammals and birds.&quot;},
+    {name:&quot;Desert habitats&quot;,habitat:&quot;deserts, shrubs&quot;,characteristics:&quot;Deserts are quite diverse habitats.Some are sun-baked lands that experience high daytime temperatures. Others are cool and experience cold winters.&quot;},
+    {name:&quot;Forest habitats&quot;,habitat:&quot;temperate forests, rainforests, fog forests, coniferous forests&quot;,characteristics:&quot;There are different types of forests: temperate, tropical, foggy, coniferous and boreal. Each of them has different climatic conditions as well as a variety of fauna and flora.&quot;},
+    {name:&quot;Meadow habitats&quot;,habitat:&quot;tropical meadows, steppe meadows, temperate meadow&quot;,characteristics:&quot;Meadows are habitats dominated by grasses and very few trees and shrubs. Many animals that live there are herbivores and take their place in the food chain, act as food for predators.&quot;},
+    {name:&quot;Tundra habitats&quot;,habitat:&quot;alpine tundra, arctic tundra&quot;,characteristics:&quot;The tundra is a cold habitat. It is characterized by low temperatures, short vegetation, long winters and short growing seasons.&quot;
+    }])
+
+</code></pre>
+<h4 id="_6">Вывод при заполении коллекции "Зона обитания":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c0ca79d8e7c49af3eb60f7&quot;),
+        ObjectId(&quot;60c0ca79d8e7c49af3eb60f8&quot;),
+        ObjectId(&quot;60c0ca79d8e7c49af3eb60f9&quot;),
+        ObjectId(&quot;60c0ca79d8e7c49af3eb60fa&quot;),
+        ObjectId(&quot;60c0ca79d8e7c49af3eb60fb&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_7">Заполнение коллекции "Здание":</h4>
+<pre><code>db.building.insertMany([
+    {address:&quot;Alexandrovsky Park 1AJ&quot;},
+    {address:&quot;Alexandrovsky park 1AZ&quot;},
+    {address:&quot;Alexandrovsky park 1YA&quot;}
+    ])
+</code></pre>
+<h4 id="_8">Вывод при заполении коллекции "Здание":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c0cc3dd8e7c49af3eb60fc&quot;),
+        ObjectId(&quot;60c0cc3dd8e7c49af3eb60fd&quot;),
+        ObjectId(&quot;60c0cc3dd8e7c49af3eb60fe&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_9">Заполнение коллекции "Сотрудник":</h4>
+<pre><code>db.worker.insertMany([
+    {FIO:&quot;Yana Bogdanov Danilovna&quot;,birthday:new Date(&quot;1978-07-01&quot;),post:&quot;zootechik&quot;,email:&quot;YanaBogdanov@yandex.com&quot;,phone:&quot;+79679834988&quot;},
+    {FIO:&quot;Darya Nikulina Semynovna&quot;,birthday: new Date(&quot;1980-07-11&quot;),post:&quot;animal feeding workers&quot;,email:&quot;DaryaNikulina@yandex.com&quot;,phone:&quot;+78934984323&quot;},
+    {FIO:&quot;Evgeny Rogov Kirllovich&quot;,birthday:new Date(&quot;1977-08-01&quot;),post:&quot;veterinarian&quot;,email:&quot;EvgenyRogov@yandex.com&quot;,phone:&quot;+78934984552&quot;},
+    {FIO:&quot;Elena Timofeeva Danilovna&quot;,birthday: new Date(&quot;1987-05-23&quot;),post:&quot;administrator&quot;,email:&quot;Timofeeva@yandex.com&quot;,phone:&quot;+78955984323&quot;},
+    {FIO:&quot;Mir Sergeyeva Vladislavovna&quot;,birthday:new Date(&quot;1997-04-21&quot;),post:&quot;ornithologists&quot;,email:&quot;MirSergeyeva@yandex.com&quot;,phone:&quot;+78934984355&quot;}
+    ])
+</code></pre>
+<h4 id="_10">Вывод при заполении коллекции "Сотрудник":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c0d161d8e7c49af3eb60ff&quot;),
+        ObjectId(&quot;60c0d161d8e7c49af3eb6100&quot;),
+        ObjectId(&quot;60c0d161d8e7c49af3eb6101&quot;),
+        ObjectId(&quot;60c0d161d8e7c49af3eb6102&quot;),
+        ObjectId(&quot;60c0d161d8e7c49af3eb6103&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_11">Заполнение коллекции "Вид":</h4>
+<pre><code>var animal1_id = db.Animals.findOne({name:&quot;Jim&quot;})._id
+var animal2_id = db.Animals.findOne({name:&quot;Tom&quot;})._id
+var animal3_id = db.Animals.findOne({name:&quot;Sue&quot;})._id
+var animal4_id = db.Animals.findOne({name:&quot;Josh&quot;})._id
+var animal5_id = db.Animals.findOne({name:&quot;Joe&quot;})._id
+
+db.type.insertMany([
+    {animal: new DBRef(&quot;Animals&quot;,animal1_id),type:&quot;bird&quot;,information_about_wintering:&quot;wintering birds fly to warm countries&quot;, normal_temperature:&quot;42.5 ° C - 45.5 ° C&quot;},
+    {animal: new DBRef(&quot;Animals&quot;,animal2_id),type:&quot;bird&quot;,information_about_wintering:&quot;wintering birds fly to warm countries&quot;, normal_temperature:&quot;42.5 ° C - 45.5 ° C&quot;},
+    {animal: new DBRef(&quot;Animals&quot;,animal5_id),type:&quot;iguana&quot;},{animal: new DBRef(&quot;Animals&quot;,animal4_id),type:&quot;iguana&quot;},
+    {animal: new DBRef(&quot;Animals&quot;,animal3_id),type:&quot;snake&quot;}
+    ])
+</code></pre>
+<h4 id="_12">Вывод при заполении коллекции "Вид":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c26462d8e7c49af3eb6148&quot;),
+        ObjectId(&quot;60c26462d8e7c49af3eb6149&quot;),
+        ObjectId(&quot;60c26462d8e7c49af3eb614a&quot;),
+        ObjectId(&quot;60c26462d8e7c49af3eb614b&quot;),
+        ObjectId(&quot;60c26462d8e7c49af3eb614c&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_13">Заполнение коллекции "Питание":</h4>
+<pre><code>ration_id = ObjectId(&quot;60c0c812d8e7c49af3eb60f1&quot;)
+ration2_id = ObjectId(&quot;60c0c812d8e7c49af3eb60f2&quot;) 
+ration3_id = ObjectId(&quot;60c0c812d8e7c49af3eb60f3&quot;)
+ration4_id = ObjectId(&quot;60c0c812d8e7c49af3eb60f4&quot;)
+ration5_id = ObjectId(&quot;60c0c812d8e7c49af3eb60f5&quot;)
+ration6_id = ObjectId(&quot;60c0c812d8e7c49af3eb60f6&quot;)
+
+db.nutrition.insertMany([
+    {animal:new DBRef(&quot;Animals&quot;,animal1_id),feeding_ration:new DBRef(&quot;feeding_ration&quot;,ration2_id),feeding_time:&quot;14:30:00&quot;},
+    {animal:new DBRef(&quot;Animals&quot;,animal2_id),feeding_ration:new DBRef(&quot;feeding_ration&quot;,ration_id),feeding_time:&quot;10:34:00&quot;},
+    {animal:new DBRef(&quot;Animals&quot;,animal3_id),feeding_ration:new DBRef(&quot;feeding_ration&quot;,ration5_id),feeding_time:&quot;11:00:00&quot;},
+    {animal:new DBRef(&quot;Animals&quot;,animal4_id),feeding_ration:new DBRef(&quot;feeding_ration&quot;,ration6_id),feeding_time:&quot;12:35:00&quot;},
+    {animal:new DBRef(&quot;Animals&quot;,animal5_id),feeding_ration:new DBRef(&quot;feeding_ration&quot;,ration4_id),feeding_time:&quot;15:00:00&quot;}
+    ])
+</code></pre>
+<h4 id="_14">Вывод при заполении коллекции "Питание":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c25e5bd8e7c49af3eb6130&quot;),
+        ObjectId(&quot;60c25e5bd8e7c49af3eb6131&quot;),
+        ObjectId(&quot;60c25e5bd8e7c49af3eb6132&quot;),
+        ObjectId(&quot;60c25e5bd8e7c49af3eb6133&quot;),
+        ObjectId(&quot;60c25e5bd8e7c49af3eb6134&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_15">Заполнение коллекции "Территория зоопарка":</h4>
+<pre><code>building1 = ObjectId(&quot;60c0cc3dd8e7c49af3eb60fc&quot;)
+building2 = ObjectId(&quot;60c0cc3dd8e7c49af3eb60fd&quot;)
+building3_id = ObjectId(&quot;60c0cc3dd8e7c49af3eb60fe&quot;)
+
+
+&gt; db.zoo_territory.insertMany([
+    {animal:new DBRef(&quot;Animals&quot;,animal3_id),building:new DBRef(&quot;building&quot;,building1),habitat_period:&quot;15.08.2015-16.02.2025&quot;},
+    {animal:new DBRef(&quot;Animals&quot;,animal4_id),building:new DBRef(&quot;building&quot;,building1),habitat_period:&quot;12.01.2012-23.09.2023&quot;}, 
+    {animal:new DBRef(&quot;Animals&quot;,animal2_id),building:new DBRef(&quot;building&quot;,building2),habitat_period:&quot;12.01.2012-23.09.2023&quot;}, 
+    {animal:new DBRef(&quot;Animals&quot;,animal5_id),building:new DBRef(&quot;building&quot;,building1),habitat_period:&quot;15.08.2015-16.02.2025&quot;}
+    ])
+</code></pre>
+<h4 id="_16">Вывод при заполении коллекции "Территория зоопарка":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c25fd6d8e7c49af3eb6135&quot;),
+        ObjectId(&quot;60c25fd6d8e7c49af3eb6136&quot;),
+        ObjectId(&quot;60c25fd6d8e7c49af3eb6137&quot;),
+        ObjectId(&quot;60c25fd6d8e7c49af3eb6138&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_17">Заполнение коллекции "Обитание":</h4>
+<pre><code>db.habitation.insertMany([
+    {animal: new DBRef(&quot;Animals&quot;,animal4_id),habitat_area: new DBRef(&quot;habitat_area&quot;,habitat_area3)},
+    {animal: new DBRef(&quot;Animals&quot;,animal3_id), habitat_area: new DBRef(&quot;habitat_area&quot;,habitat_area1)},
+    {animal:new DBRef(&quot;Animals&quot;,animal1_id), habitat_area: new DBRef(&quot;habitat_area&quot;,habitat_area4)},
+    {animal:new DBRef(&quot;Animals&quot;,animal5_id), habitat_area: new DBRef(&quot;habitat_area&quot;,habitat_area1)}
+    ])
+</code></pre>
+<h4 id="_18">Вывод при заполении коллекции "Обитание":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c26160d8e7c49af3eb6139&quot;),
+        ObjectId(&quot;60c26160d8e7c49af3eb613a&quot;),
+        ObjectId(&quot;60c26160d8e7c49af3eb613b&quot;),
+        ObjectId(&quot;60c26160d8e7c49af3eb613c&quot;)
+    ]
+}
+</code></pre>
+<h4 id="_19">Заполнение коллекции "Обслуживание":</h4>
+<pre><code>worker1 =  ObjectId(&quot;60c0d161d8e7c49af3eb60ff&quot;)
+worker2 =  ObjectId(&quot;60c0d161d8e7c49af3eb6100&quot;)
+worker3 =  ObjectId(&quot;60c0d161d8e7c49af3eb6101&quot;)
+worker4 = ObjectId(&quot;60c0d161d8e7c49af3eb6102&quot;)
+worker5 = ObjectId(&quot;60c0d161d8e7c49af3eb6103&quot;)
+
+db.service.insertMany([
+    {worker: new DBRef(&quot;worker&quot;,worker2), animal: new DBRef(&quot;Animals&quot;,animal1_id),service:&quot;feeding every day at 10:00 and 19:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker2), animal: new DBRef(&quot;Animals&quot;,animal2_id),service:&quot;feeding every day at 10:00 and 19:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker2), animal: new DBRef(&quot;Animals&quot;,animal3_id),service:&quot;feeding every day at 11:00 and 20:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker2), animal: new DBRef(&quot;Animals&quot;,animal4_id),service:&quot;feeding every day at 11:00 and 20:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker2), animal: new DBRef(&quot;Animals&quot;,animal5_id),service:&quot;feeding every day at 9:00 and 17:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker3), animal: new DBRef(&quot;Animals&quot;,animal1_id),service:&quot;Monday at 9:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker3), animal: new DBRef(&quot;Animals&quot;,animal2_id),service:&quot;Wednesday at 11:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker3), animal: new DBRef(&quot;Animals&quot;,animal3_id),service:&quot;Tuesday at 12:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker3), animal: new DBRef(&quot;Animals&quot;,animal4_id),service:&quot;Wednesday at 11:00&quot;},
+    {worker: new DBRef(&quot;worker&quot;,worker3), animal: new DBRef(&quot;Animals&quot;,animal5_id),service:&quot;Monday at 10:00&quot;}
+    ])
+</code></pre>
+<h4 id="_20">Вывод при заполении коллекции "Обслуживание":</h4>
+<pre><code>{
+    &quot;acknowledged&quot; : true,
+    &quot;insertedIds&quot; : [
+        ObjectId(&quot;60c26323d8e7c49af3eb613d&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb613e&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb613f&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb6140&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb6141&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb6142&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb6143&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb6144&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb6145&quot;),
+        ObjectId(&quot;60c26323d8e7c49af3eb6146&quot;)
+    ]
+}
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

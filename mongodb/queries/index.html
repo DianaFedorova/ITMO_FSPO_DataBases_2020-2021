@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>worker - Zoo</title>
+        <title>queries - Zoo</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,48 +36,48 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../animals/" class="dropdown-item">animals</a>
+    <a href="../../tables/animals/" class="dropdown-item">animals</a>
 </li>
                                     
 <li>
-    <a href="../building/" class="dropdown-item">building</a>
+    <a href="../../tables/building/" class="dropdown-item">building</a>
 </li>
                                     
 <li>
-    <a href="../feeding_ration/" class="dropdown-item">feeding_ration</a>
+    <a href="../../tables/feeding_ration/" class="dropdown-item">feeding_ration</a>
 </li>
                                     
 <li>
-    <a href="../habitat_area/" class="dropdown-item">habitat_area</a>
+    <a href="../../tables/habitat_area/" class="dropdown-item">habitat_area</a>
 </li>
                                     
 <li>
-    <a href="../habitation/" class="dropdown-item">habitation</a>
+    <a href="../../tables/habitation/" class="dropdown-item">habitation</a>
 </li>
                                     
 <li>
-    <a href="../nutrition/" class="dropdown-item">nutrition</a>
+    <a href="../../tables/nutrition/" class="dropdown-item">nutrition</a>
 </li>
                                     
 <li>
-    <a href="../service/" class="dropdown-item">service</a>
+    <a href="../../tables/service/" class="dropdown-item">service</a>
 </li>
                                     
 <li>
-    <a href="../type/" class="dropdown-item">type</a>
+    <a href="../../tables/type/" class="dropdown-item">type</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">worker</a>
+    <a href="../../tables/worker/" class="dropdown-item">worker</a>
 </li>
                                     
 <li>
-    <a href="../zoo_territory/" class="dropdown-item">zoo_territory</a>
+    <a href="../../tables/zoo_territory/" class="dropdown-item">zoo_territory</a>
 </li>
                                 </ul>
                             </li>
@@ -103,20 +103,20 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MongoDB <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../mongodb/create/" class="dropdown-item">create</a>
+    <a href="../create/" class="dropdown-item">create</a>
 </li>
                                     
 <li>
-    <a href="../../mongodb/insert/" class="dropdown-item">insert</a>
+    <a href="../insert/" class="dropdown-item">insert</a>
 </li>
                                     
 <li>
-    <a href="../../mongodb/queries/" class="dropdown-item">queries</a>
+    <a href="./" class="dropdown-item active">queries</a>
 </li>
                                 </ul>
                             </li>
@@ -129,12 +129,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../type/" class="nav-link">
+                                <a rel="prev" href="../insert/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../zoo_territory/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -156,7 +156,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#worker" class="nav-link">Worker</a>
+            <li class="nav-item" data-level="1"><a href="#queries" class="nav-link">Queries</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -165,76 +165,50 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="worker">Worker</h2>
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="center">Type</th>
-<th align="center">Primary key</th>
-<th align="center">Foreign key</th>
-<th align="center">Unique</th>
-<th align="center">Integrity constraints</th>
-<th align="center">Null/not null</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">id_worker</td>
-<td align="center">int</td>
-<td align="center">+</td>
-<td align="center"></td>
-<td align="center">+</td>
-<td align="center"></td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">fio</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">30</td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">birthday</td>
-<td align="center">date</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">post</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">30</td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">email</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">30</td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">phone_number</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">12</td>
-<td align="center">not null</td>
-</tr>
-</tbody>
-</table></div>
+<h1 id="queries">Queries</h1>
+<h3 id="no-1">№ 1</h3>
+<h4 id="_1">Вывести всех сотрудников с использованием функции смены регистра.</h4>
+<pre><code>db.worker.aggregate([{$project: {FIO: {$toLower: &quot;$FIO&quot;}, post:1,phone:1}}])
+</code></pre>
+<p><img alt="" src="../1.png" /></p>
+<h3 id="no-2">№ 2</h3>
+<h4 id="103400-123500">Вывести количество животных, у которых время питания между 10:34:00 и 12:35:00.</h4>
+<pre><code>db.nutrition.find({feeding_time: {$gte: &quot;10:34:00&quot;,$lte:&quot;12:35:00&quot;}}).count()
+</code></pre>
+<p><img alt="" src="../2.png" /></p>
+<h3 id="no-3">№ 3</h3>
+<h4 id="_2">Вывести информацию о всех обслуживаниях, сортированную по именам животных.</h4>
+<pre><code>db.service.find().sort({aminal:1})
+</code></pre>
+<p><img alt="" src="../3.png" /></p>
+<h3 id="no-4">№ 4</h3>
+<h4 id="_">Вывести всех сотрудников, заменив все пробелы в ФИО на "_".</h4>
+<pre><code>db.worker.aggregate([{$project:{FIO:{$replaceAll:{input:&quot;$FIO&quot;, find:&quot; &quot;,replacement:&quot;_&quot;}}}}]).pretty()
+</code></pre>
+<p><img alt="" src="../4.png" /></p>
+<h3 id="no-5">№ 5</h3>
+<h4 id="concentrate-2">Вывести информацию о рационах питания под названием "concentrate", у котрых номер рациона больше 2.</h4>
+<pre><code>db.feeding_ration.find({type_ration:/^concentrate/, &quot;_id&quot;:{$gt: ObjectId(&quot;60c0c812d8e7c49af3eb60f4&quot;)} })
+</code></pre>
+<p><img alt="" src="../5.png" /></p>
+<h3 id="no-6">№ 6</h3>
+<h4 id="id-2">Вывести информацию о самом страшем сотруднике среди сотрудников, у которых id больше 2.</h4>
+<pre><code>db.worker.find({&quot;_id&quot;:{$gt: ObjectId(&quot;60c0d161d8e7c49af3eb6100&quot;)}}).sort({birthday:1}).limit(1)
+</code></pre>
+<p><img alt="" src="../6.png" /></p>
+<h3 id="no-7">№ 7</h3>
+<h4 id="1979">Вывести информацию о сотрудниках, которые родились позже 1979 года.</h4>
+<pre><code>db.worker.find({birthday:{$gt: ISODate(&quot;1979-12-31T23:59:59.132Z&quot;)}})
+</code></pre>
+<p><img alt="" src="../7.png" /></p>
+<h3 id="no-8">№ 8</h3>
+<h4 id="13">Вывести день, месяц и год рождения животных, которые родились в июне или до 13 числа любого месяца.</h4>
+<pre><code>var month = 6
+var day = 13
+
+db.Animals.aggregate([ {&quot;$redact&quot;: { &quot;$cond&quot;: [  {  &quot;$or&quot;: [ { &quot;$eq&quot;: [ { &quot;$month&quot;: &quot;$birthday&quot; }, month ] },{ &quot;$lt&quot;: [ { &quot;$dayOfMonth&quot;: &quot;$birthday&quot; }, day ] }] }, &quot;$$KEEP&quot;,&quot;$$PRUNE&quot;] } }])
+</code></pre>
+<p><img alt="" src="../8.png" /></p></div>
             </div>
         </div>
 

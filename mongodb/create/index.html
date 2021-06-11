@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>worker - Zoo</title>
+        <title>create - Zoo</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,48 +36,48 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../animals/" class="dropdown-item">animals</a>
+    <a href="../../tables/animals/" class="dropdown-item">animals</a>
 </li>
                                     
 <li>
-    <a href="../building/" class="dropdown-item">building</a>
+    <a href="../../tables/building/" class="dropdown-item">building</a>
 </li>
                                     
 <li>
-    <a href="../feeding_ration/" class="dropdown-item">feeding_ration</a>
+    <a href="../../tables/feeding_ration/" class="dropdown-item">feeding_ration</a>
 </li>
                                     
 <li>
-    <a href="../habitat_area/" class="dropdown-item">habitat_area</a>
+    <a href="../../tables/habitat_area/" class="dropdown-item">habitat_area</a>
 </li>
                                     
 <li>
-    <a href="../habitation/" class="dropdown-item">habitation</a>
+    <a href="../../tables/habitation/" class="dropdown-item">habitation</a>
 </li>
                                     
 <li>
-    <a href="../nutrition/" class="dropdown-item">nutrition</a>
+    <a href="../../tables/nutrition/" class="dropdown-item">nutrition</a>
 </li>
                                     
 <li>
-    <a href="../service/" class="dropdown-item">service</a>
+    <a href="../../tables/service/" class="dropdown-item">service</a>
 </li>
                                     
 <li>
-    <a href="../type/" class="dropdown-item">type</a>
+    <a href="../../tables/type/" class="dropdown-item">type</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">worker</a>
+    <a href="../../tables/worker/" class="dropdown-item">worker</a>
 </li>
                                     
 <li>
-    <a href="../zoo_territory/" class="dropdown-item">zoo_territory</a>
+    <a href="../../tables/zoo_territory/" class="dropdown-item">zoo_territory</a>
 </li>
                                 </ul>
                             </li>
@@ -103,20 +103,20 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MongoDB <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../mongodb/create/" class="dropdown-item">create</a>
+    <a href="./" class="dropdown-item active">create</a>
 </li>
                                     
 <li>
-    <a href="../../mongodb/insert/" class="dropdown-item">insert</a>
+    <a href="../insert/" class="dropdown-item">insert</a>
 </li>
                                     
 <li>
-    <a href="../../mongodb/queries/" class="dropdown-item">queries</a>
+    <a href="../queries/" class="dropdown-item">queries</a>
 </li>
                                 </ul>
                             </li>
@@ -129,12 +129,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../type/" class="nav-link">
+                                <a rel="prev" href="../../code/insert/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../zoo_territory/" class="nav-link">
+                                <a rel="next" href="../insert/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -156,7 +156,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#worker" class="nav-link">Worker</a>
+            <li class="nav-item" data-level="2"><a href="#create" class="nav-link">Create</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -165,76 +165,37 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="worker">Worker</h2>
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="center">Type</th>
-<th align="center">Primary key</th>
-<th align="center">Foreign key</th>
-<th align="center">Unique</th>
-<th align="center">Integrity constraints</th>
-<th align="center">Null/not null</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">id_worker</td>
-<td align="center">int</td>
-<td align="center">+</td>
-<td align="center"></td>
-<td align="center">+</td>
-<td align="center"></td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">fio</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">30</td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">birthday</td>
-<td align="center">date</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">post</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">30</td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">email</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">30</td>
-<td align="center">not null</td>
-</tr>
-<tr>
-<td align="left">phone_number</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">12</td>
-<td align="center">not null</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="create">Create</h2>
+<h4 id="_1">Создание таблицы "Животные":</h4>
+<pre><code>db.createCollection(&quot;Animals&quot;)
+</code></pre>
+<h4 id="_2">Создание таблицы "Вид":</h4>
+<pre><code>db.createCollection(&quot;type&quot;)
+</code></pre>
+<h4 id="_3">Создание таблицы "Обслуживание":</h4>
+<pre><code>db.createCollection(&quot;service&quot;)
+</code></pre>
+<h4 id="_4">Создание таблицы "Сотрудник":</h4>
+<pre><code>db.createCollection(&quot;worker&quot;)
+</code></pre>
+<h4 id="_5">Создание таблицы "Питание":</h4>
+<pre><code>db.createCollection(&quot;nutrition&quot;)
+</code></pre>
+<h4 id="_6">Создание таблицы "Рацион кормления":</h4>
+<pre><code>db.createCollection(&quot;feeding_ration&quot;)
+</code></pre>
+<h4 id="_7">Создание таблицы "Обитание":</h4>
+<pre><code>db.createCollection(&quot;habitation&quot;)
+</code></pre>
+<h4 id="_8">Создание таблицы "Зона обитания":</h4>
+<pre><code>db.createCollection(&quot;habitat area&quot;)
+</code></pre>
+<h4 id="_9">Создание таблицы "Территория зоопарка":</h4>
+<pre><code>db.createCollection(&quot;zoo_territory&quot;)
+</code></pre>
+<h4 id="_10">Создание таблицы "Здание":</h4>
+<pre><code>db.createCollection(&quot;building&quot;)
+</code></pre></div>
             </div>
         </div>
 

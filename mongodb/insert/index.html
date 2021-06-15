@@ -175,7 +175,7 @@
     {name:&quot;Joe&quot;,birthday:new Date(&quot;2005-05-12&quot;)}
     ])
 </code></pre>
-<h4 id="_2">Вывод при заполении коллекции "Животные":</h4>
+<h4 id="_2">Вывод при заполнении коллекции "Животные":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -197,7 +197,7 @@
     {type_ration:&quot;concentrate&quot;,description_ration:&quot;concentrates more than 40% the rest - bulky&quot;}
     ])
 </code></pre>
-<h4 id="_4">Вывод при заполении коллекции "Рацион кормления":</h4>
+<h4 id="_4">Вывод при заполнении коллекции "Рацион кормления":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -220,7 +220,7 @@
     }])
 
 </code></pre>
-<h4 id="_6">Вывод при заполении коллекции "Зона обитания":</h4>
+<h4 id="_6">Вывод при заполнении коллекции "Зона обитания":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -239,7 +239,7 @@
     {address:&quot;Alexandrovsky park 1YA&quot;}
     ])
 </code></pre>
-<h4 id="_8">Вывод при заполении коллекции "Здание":</h4>
+<h4 id="_8">Вывод при заполнении коллекции "Здание":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -258,7 +258,7 @@
     {FIO:&quot;Mir Sergeyeva Vladislavovna&quot;,birthday:new Date(&quot;1997-04-21&quot;),post:&quot;ornithologists&quot;,email:&quot;MirSergeyeva@yandex.com&quot;,phone:&quot;+78934984355&quot;}
     ])
 </code></pre>
-<h4 id="_10">Вывод при заполении коллекции "Сотрудник":</h4>
+<h4 id="_10">Вывод при заполнении коллекции "Сотрудник":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -284,7 +284,7 @@ db.type.insertMany([
     {animal: new DBRef(&quot;Animals&quot;,animal3_id),type:&quot;snake&quot;}
     ])
 </code></pre>
-<h4 id="_12">Вывод при заполении коллекции "Вид":</h4>
+<h4 id="_12">Вывод при заполнении коллекции "Вид":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -312,7 +312,7 @@ db.nutrition.insertMany([
     {animal:new DBRef(&quot;Animals&quot;,animal5_id),feeding_ration:new DBRef(&quot;feeding_ration&quot;,ration4_id),feeding_time:&quot;15:00:00&quot;}
     ])
 </code></pre>
-<h4 id="_14">Вывод при заполении коллекции "Питание":</h4>
+<h4 id="_14">Вывод при заполнении коллекции "Питание":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -337,7 +337,7 @@ building3_id = ObjectId(&quot;60c0cc3dd8e7c49af3eb60fe&quot;)
     {animal:new DBRef(&quot;Animals&quot;,animal5_id),building:new DBRef(&quot;building&quot;,building1),habitat_period:&quot;15.08.2015-16.02.2025&quot;}
     ])
 </code></pre>
-<h4 id="_16">Вывод при заполении коллекции "Территория зоопарка":</h4>
+<h4 id="_16">Вывод при заполнении коллекции "Территория зоопарка":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -356,7 +356,7 @@ building3_id = ObjectId(&quot;60c0cc3dd8e7c49af3eb60fe&quot;)
     {animal:new DBRef(&quot;Animals&quot;,animal5_id), habitat_area: new DBRef(&quot;habitat_area&quot;,habitat_area1)}
     ])
 </code></pre>
-<h4 id="_18">Вывод при заполении коллекции "Обитание":</h4>
+<h4 id="_18">Вывод при заполнении коллекции "Обитание":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
@@ -387,7 +387,7 @@ db.service.insertMany([
     {worker: new DBRef(&quot;worker&quot;,worker3), animal: new DBRef(&quot;Animals&quot;,animal5_id),service:&quot;Monday at 10:00&quot;}
     ])
 </code></pre>
-<h4 id="_20">Вывод при заполении коллекции "Обслуживание":</h4>
+<h4 id="_20">Вывод при заполнении коллекции "Обслуживание":</h4>
 <pre><code>{
     &quot;acknowledged&quot; : true,
     &quot;insertedIds&quot; : [
